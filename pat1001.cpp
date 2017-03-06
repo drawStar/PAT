@@ -19,7 +19,7 @@ int main()
         cout<<"0";
 
     while(sum>0)
-    {#千位符取逗号
+    {//千位符取逗号
        temp=sum%10;
        sum=sum/10;
        str[mycount++]=temp+'0';//转为字符
