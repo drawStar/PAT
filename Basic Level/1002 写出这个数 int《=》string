@@ -1,0 +1,29 @@
+#include <iostream>
+#include<stdio.h>
+#include<string>
+#include<sstream>
+using namespace std;
+string int_to_string(int n)
+{
+ostringstream stream;
+stream<<n;
+return stream.str();
+}
+int main()
+{
+    int sum=0;
+    char ch;
+    string ss;
+    string b[10]={"ling", "yi", "er", "san", "si", "wu", "liu", "qi", "ba", "jiu"};
+    while ((ch = getchar()) != '\n')    //如果一直输入字符，不按回车的话
+        sum += (ch - '0');//string to int
+    ss=int_to_string(sum);
+    for (int i=0;i<ss.length();i++)
+    {
+        if(i==ss.length()-1)
+          cout<<b[ss[i]-'0'];
+        else
+          cout<<b[ss[i]-'0']<<" ";
+    }
+    return 0;
+}
