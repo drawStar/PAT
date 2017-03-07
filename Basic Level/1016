@@ -1,0 +1,19 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    string A,B;
+    int da,db,sum1=0,sum2=0;
+    cin>>A>>da>>B>>db;
+    for (int i=0;i<A.length() ;i++)
+        if(A[i]-'0'==da)
+            sum1=sum1*10+da;
+   for (int i=0;i<B.length() ;i++)
+        if(B[i]-'0'==db)
+            sum2=sum2*10+db;
+    sum1+=sum2;
+    cout<<sum1;
+    return 0;
+}
