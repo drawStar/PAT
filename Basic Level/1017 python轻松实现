@@ -1,0 +1,9 @@
+
+
+#coding=utf-8
+A=raw_input()
+a,b=A.split(' ')
+a=int(a)
+b=int(b)
+x,y=divmod(a,b)
+print x,y
