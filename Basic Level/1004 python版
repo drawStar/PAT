@@ -1,0 +1,22 @@
+#coding=utf-8
+
+n=raw_input("")
+score=[]
+scores=[]
+for i in xrange(int(n)):
+    stu=raw_input()
+    stu=stu.split(' ')
+    score.append(stu)
+
+# print score
+# print len(score)
+for x in score:
+    scores.append(int(x[2]))
+# scores.append(x[2] for x in score)
+# print scores
+# print max(scores)
+maxped=scores.index(max(scores))
+minped=scores.index(min(scores))
+# print maxped,minped
+print score[maxped][0],score[maxped][1]
+print score[minped][0],score[minped][1]
