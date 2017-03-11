@@ -7,54 +7,49 @@ yi = [0,0,0,0,0,0]
 for _ in xrange(A):
     B=raw_input()
     a,b=B.split(' ')
-    if a==b:#平
-        jia[1]+=1
-        yi[1]+=1
-    elif a=='J' and b=='B' :
-        jia[0] += 1
-        yi[2] += 1
-        jia[5] +=1
-    elif a=='C' and b=='J' :
-        jia[0] += 1
-        yi[2] += 1
-        jia[4]+=1
-    elif a=='B' and b=='C':
-        jia[0] += 1
-        yi[2] += 1
-        jia[3]+=1
-
-    elif b == 'J' and a == 'B':
-        jia[2] += 1
-        yi[0] += 1
-        yi[5] += 1
-    elif b == 'C' and a == 'J':
-        yi[0] += 1
-        jia[2] += 1
-        yi[4] += 1
-    elif b == 'B' and a == 'C':
-        yi[0] += 1
-        jia[2] += 1
-        yi[3] += 1
-
-AA=max(jia[3:])
-BB=max(yi[3:])
-
-if jia[3]==AA or AA==0:
-    maxjia='B'
-elif jia[4]==AA:
-    maxjia='C'
-else:
-    maxjia='J'
-
-if yi[3]==BB or BB==0:
-    maxyi='B'
-elif yi[4]==BB:
-    maxyi='C'
-else:
-    maxyi='J'
+    if a=='J' :
+        if b=='B' :
+            jia[0] += 1#胜+1
+            yi[2] += 1
+            jia[5] +=1
+        elif  b == 'C':
+            yi[0] += 1
+            jia[2] += 1
+            yi[4] += 1
+        else:
+            jia[1]+=1
+            yi[1]+=1
+        continue
+    if a=='C':
+        if b=='J' :
+            jia[0] += 1
+            yi[2] += 1
+            jia[4]+=1
+        elif b == 'B':
+            yi[0] += 1
+            jia[2] += 1
+            yi[3] += 1
+        else:
+            jia[1]+=1
+            yi[1]+=1
+        continue
+    else:
+        if b=='C':
+            jia[0] += 1
+            yi[2] += 1
+            jia[3]+=1
+        elif b == 'J':
+           jia[2] += 1
+           yi[0] += 1
+           yi[5] += 1
+        else:
+            jia[1]+=1
+            yi[1]+=1
+        continue
+aa=jia[3:].index(max(jia[3:]))
+bb=yi[3:].index(max(yi[3:]))
+mylist=['B','C','J']
 
 print jia[0],jia[1],jia[2]
 print yi[0],yi[1],yi[2]
-print maxjia,maxyi
-
-应该是for循环多
+print mylist[aa],mylist[bb]
